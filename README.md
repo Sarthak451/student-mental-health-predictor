@@ -7,7 +7,7 @@ This web app uses machine learning to predict whether a student shows signs of d
 
 ## 🚀 Try the App Live
 
-Click the badge above or visit: [https://Sarthak451-student-mental-health-predictor.streamlit.app](https://Sarthak451-student-mental-health-predictor.streamlit.app)
+ visit: https://student-mental-health-predictor-kyhwc7cmtzbf9kdstzgrmh.streamlit.app/(https://Sarthak451-student-mental-health-predictor.streamlit.app)
 
 ## 📦 How to Run Locally
 
