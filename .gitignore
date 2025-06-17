@@ -1,4 +1,6 @@
 __pycache__/
 *.pkl
 *.csv
+!dataset/Student Mental health.csv
+
 model/
