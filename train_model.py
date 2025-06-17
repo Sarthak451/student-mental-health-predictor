@@ -1,17 +1,20 @@
-# 🔧 train_model.py
+
+# train_model.py
 import pandas as pd
 import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
+import os
 
 # Load data
-df = pd.read_csv("data/Student Mental health.csv")
+df = pd.read_csv("dataset/Student Mental health.csv")
 df.columns = df.columns.str.strip()
 
 # Rename columns for consistency
 df.rename(columns={
     'Choose your gender': 'gender',
+    'Age': 'age',
     'What is your course?': 'course',
     'Your current year of Study': 'year_of_study',
     'What is your CGPA?': 'cgpa',
@@ -22,8 +25,8 @@ df.rename(columns={
     'Did you seek any specialist for a treatment?': 'sought_treatment'
 }, inplace=True)
 
-# Drop timestamp
-df.drop(columns=['Timestamp'], inplace=True)
+# Drop timestamp if exists
+df.drop(columns=['Timestamp'], errors='ignore', inplace=True)
 
 # Encode categorical variables
 label_encoders = {}
@@ -32,6 +35,9 @@ for col in df.columns:
         le = LabelEncoder()
         df[col] = le.fit_transform(df[col])
         label_encoders[col] = le
+
+# Create model directory
+os.makedirs("model", exist_ok=True)
 
 # Save encoders
 joblib.dump(label_encoders, 'model/label_encoders.pkl')
@@ -48,3 +54,5 @@ model.fit(X_train, y_train)
 # Save model
 joblib.dump(model, 'model/model.pkl')
 print("✅ Model and encoders saved.")
+print("🧩 Features used to train model:")
+print(list(X.columns))
