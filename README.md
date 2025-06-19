@@ -1,7 +1,7 @@
 
 # 🧠 Student Mental Health Predictor
 
-[![Open in Streamlit]( https://student-mental-health-predictor-kyhwc7cmtzbf9kdstzgrmh.streamlit.app/)
+[![Open in Streamlit]( https://student-mental-health-predictor-kyhwc7cmtzbf9kdstzgrmh.streamlit.app/)]
 
 This web app uses machine learning to predict whether a student shows signs of depression based on academic and lifestyle factors.
 
